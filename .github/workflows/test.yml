@@ -20,7 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Bash Action
-        uses: rethab/bash-action@v1
-        with:
-          command: echo 
-          who: 'Hello'
+        run: echo $VAR
+        env:
+          VAR: "TEST"
