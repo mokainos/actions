@@ -16,3 +16,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Secondjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bash Action
+        uses: rethab/bash-action@v1
+        with:
+          command: echo 
+          who: 'Hello'
