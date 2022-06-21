@@ -22,4 +22,4 @@ jobs:
       - name: Bash Action
         run: echo $VAR
         env:
-          VAR: "TEST"
+          VAR: ${{ github.repository }}
