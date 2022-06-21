@@ -1,0 +1,10 @@
+name: testing
+on:
+  workflow_dispatch:
+jobs:
+  production-deploy:
+    if: github.repository == 'hmcts/actions'
+  run-on: ubuntu-latest
+  steps:
+    - run: echo "hello"
+    
