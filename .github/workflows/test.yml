@@ -4,10 +4,10 @@ on:
 jobs:
   production-deploy:
     if: github.repository == 'hmcts/actions'
-  run-on: ubuntu-latest
-  steps:
-    - name: bashing
-      uses: rethab/bash-action@v1
-      with:
-        echo: "HEllo"
+    run-on: ubuntu-latest
+    steps:
+      - name: bashing
+       uses: rethab/bash-action@v1
+        with:
+          echo: "HEllo"
     
