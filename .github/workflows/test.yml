@@ -6,5 +6,8 @@ jobs:
     if: github.repository == 'hmcts/actions'
   run-on: ubuntu-latest
   steps:
-    - run: echo "hello"
+    - name: bashing
+      uses: rethab/bash-action@v1
+      with:
+        echo: "HEllo"
     
