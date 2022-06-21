@@ -4,7 +4,7 @@ on:
 jobs:
   production-deploy:
     if: github.repository == 'hmcts/actions'
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: bashing
         run: echo "HEllo"
