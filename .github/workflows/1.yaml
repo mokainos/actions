@@ -5,8 +5,16 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: "step1"
+      - name: "j1step1"
         run: echo "step1"
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo {{ github.ref }}
+      - run: echo ${{ github.ref }}
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "j2step1"
+        run: echo "step1"
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo ${{ job.status }}
