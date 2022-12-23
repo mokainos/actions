@@ -17,4 +17,6 @@ jobs:
         run: echo "step1"
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo ${{ job.status }}
+      - run: |
+          ls ${{ github.workspace }}
+          echo ${{ job.status }}
