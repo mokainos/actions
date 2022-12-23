@@ -1,5 +1,5 @@
 name: github_actions_1
-run-name: ${{ github.actor }} is
+#run-name: ${{ github.actor }} is
 on: [push]
 jobs:
   job1:
