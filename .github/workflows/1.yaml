@@ -1,6 +1,9 @@
 name: github_actions_1
 #run-name: ${{ github.actor }} is
-on: [push]
+on: 
+  [push, workflow_dispatch]
+  
+
 jobs:
   job1:
     runs-on: ubuntu-latest
