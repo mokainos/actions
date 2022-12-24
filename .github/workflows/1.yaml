@@ -4,6 +4,7 @@ on:
   push
 jobs:
   check-bats-version:
+    runs-on: ubuntu-latest
     name: 'j1'
     steps:
       - uses: actions/checkout@v3
