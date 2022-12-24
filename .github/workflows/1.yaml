@@ -4,12 +4,12 @@ on:
   push
 jobs:
   check-bats-version:
-  name: 'j1'
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: '14'
-    - run: npm install -g
-      name: 'j1setp4'
-    - run: bats -v
+    name: 'j1'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g
+        name: 'j1setp4'
+      - run: bats -v
