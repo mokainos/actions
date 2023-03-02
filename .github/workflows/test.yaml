@@ -43,3 +43,5 @@ jobs:
         if: success() && steps.findPr.outputs.number
         env:
           PR: ${{ steps.findPr.outputs.pr }}
+      - run: echo "${{ steps.findPr.outputs }}"
+      - run: echo "${{ steps.findPr }}"
