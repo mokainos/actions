@@ -48,4 +48,4 @@ jobs:
         if: success() && steps.findPr.outputs.number
         env:
           PR: ${{ steps.findPr.outputs.pr }}
-      - run: echo "${{gh pr view ${{ steps.findPr.outputs.pr }} --json mergeCommit -q .mergeCommit.oid }}"
+      - run: echo $(gh pr view ${{ steps.findPr.outputs.pr }} --json mergeCommit -q .mergeCommit.oid )
