@@ -1,28 +1,23 @@
 name: github_actions_1
-#run-name: ${{ github.actor }} is
-on: 
-  [push, workflow_dispatch]
-  
-
+#run-name: ${{ github.actor }} is learning GitHub Actions
+on:
+  push:
+    branches: [main]
+    paths:  [README*]
+    
+  workflow_dispatch:
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: "j1step1"
-        run: echo "step1"
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo ${{ github.ref }}
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "j2step1"
-        run: echo "step1"
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: |
-          ls ${{ github.workspace }}
-          echo ${{ job.status }}
-      - name: Dump GitHub context
-        id: github_context_step
-        run: echo '${{ toJSON(github) }}'
+      - run: echo   $GITHUB_SHA
+      - run: echo $GITHUB_WORKFLOW_SHA
+      - uses: octokit/request-action@v2.x
+        id: get_latest_release
+        with:
+          route: GET /repos/hmcts/sds-flux-config/commits/$GITHUB_SHA/pulls
+          owner: octokit
+          repo: request-action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo latest release: '${{ steps.get_latest_release.outputs.data }}'"
