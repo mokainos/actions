@@ -4,5 +4,3 @@
 ok
 oo
 
-dsaf
-fsdg
