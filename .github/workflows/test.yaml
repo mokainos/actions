@@ -42,6 +42,9 @@ jobs:
       - name: Test
         run: echo $GITHUB_SHA_SHORT
       - run: env
+      - name: testing
+        if: !contains(${{ env.GITHUB_SHA_SHORT }}, 'a')
+        run: echo "TS-----"
       # Find the PR associated with this push, if there is one.
       - uses: jwalton/gh-find-current-pr@v1
         id: findPr
@@ -53,3 +56,4 @@ jobs:
       - run: echo $(gh pr view ${{ steps.findPr.outputs.pr }} --json mergeCommit -q .mergeCommit.oid )
         env:
           GH_TOKEN: ${{ github.token }}
+  
