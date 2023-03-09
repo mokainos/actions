@@ -15,7 +15,7 @@ jobs:
       - uses: octokit/request-action@v2.x
         id: get_latest_release
         with:
-          route: GET /repos/hmcts/sds-flux-config/commits/$GITHUB_SHA/pulls
+          route: GET "/repos/hmcts/sds-flux-config/commits/$GITHUB_SHA/pulls"
           owner: octokit
           repo: request-action
         env:
