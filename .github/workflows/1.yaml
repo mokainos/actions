@@ -10,8 +10,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo   $GITHUB_SHA
-      
+      - name: Set env
+        run: echo "GB_SHA=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+      - run: {{ env.GB_SHA }}
       - run: echo $GITHUB_WORKFLOW_SHA
       - uses: octokit/request-action@v2.x
         id: get_latest_release
@@ -21,6 +22,6 @@ jobs:
           repo: request-action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GB_SHA: $GITHUB_SHA
+      
           
       - run: "echo latest release: '${{ steps.get_latest_release.outputs.data }}'"
