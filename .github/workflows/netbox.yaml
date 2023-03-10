@@ -66,7 +66,7 @@ jobs:
         uses: octokit/request-action@v2.x
         id: get_pr_number
         with:
-          route: GET /repos/hmcts/sds-flux-config/commits/${{ env.GH_SHA }}/pulls
+          route: GET /repos/mokainos/actions/commits/${{ env.GH_SHA }}/pulls
           owner: octokit
           repo: request-action
         env:
