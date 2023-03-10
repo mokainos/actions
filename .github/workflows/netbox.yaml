@@ -82,7 +82,7 @@ jobs:
 #         run: | 
 #             echo PR_TITLE=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].title' ) >>   $GITHUB_ENV
       - name: Set env 
-        if: "contains(env.status, 'passed')"
+        
         run: | 
             echo PR_NUM=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].number' ) >>   $GITHUB_ENV
       - run: echo ${{ env.PR_NUM }}
@@ -107,7 +107,7 @@ jobs:
             SLACK_TITLE: upgrade was successful
             SLACK_USERNAME: netbox
             SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}    
-
+            
       - name: revert PR
         if: "!contains(env.status, 'passed')"
         run: |
@@ -115,11 +115,14 @@ jobs:
                git config --global user.email "<>"
                git config --global user.name "GitHub Actions Bot"
                git status
+               git log -n 5
                git pull
                git status
+               git log -n 5
                git revert -m 1 ${{ env.GH_SHA }} --no-edit
                git checkout -b revert-commit-${{ env.PR_NUM }} 
                git status
+               git log -n 5
                git push --set-upstream origin revert-commit-${{ env.PR_NUM }}
                #git add .
                #git commit -m "Reverting pull request #${{ env.PR_NUM }}"
