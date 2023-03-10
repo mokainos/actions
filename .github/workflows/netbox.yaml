@@ -97,7 +97,16 @@ jobs:
 #             done 
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+            SLACK_CHANNEL: slack_msg_format_testing
+            SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+            SLACK_ICON: https://github.com/rtCamp.png?size=48
+            SLACK_MESSAGE: 'Post Content :rocket:'
+            SLACK_TITLE: upgrade was successful
+            SLACK_USERNAME: netbox
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}    
 
       - name: revert PR
         if: "!contains(env.status, 'passed')"
