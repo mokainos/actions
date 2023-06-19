@@ -44,7 +44,7 @@ body:
 - type: dropdown
   id: download
   attributes:
-    label: Business unit
+    label: Business_Unit
     options:
       - cft
       - sds
