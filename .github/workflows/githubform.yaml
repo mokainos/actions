@@ -1,7 +1,10 @@
 name: Parse github form
 run-name: ${{ github.actor }}
 on:
-  issues: [opened]
+  issues:
+    types:
+      - opened
+      - labeled
   workflow_dispatch:
 jobs:
   parse:
@@ -11,4 +14,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: '0'
-      
+      - name: Display the path
+        run: echo ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
