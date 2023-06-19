@@ -7,7 +7,7 @@ body:
 - type: markdown
   attributes:
     value: |
-      Thanks for taking the time to fill out this bug! If you need real-time help, join us on Discord.
+      Change effecting
       
 - type: input
   id: Start_Date
@@ -17,6 +17,7 @@ body:
     placeholder: "MM/DD/YYYY"
   validations:
     required: true
+    
 - type: input
   id: End_Date
   attributes:
@@ -27,13 +28,28 @@ body:
     required: true
     
 - type: dropdown
+  id: ENV
+  attributes:
+    label: Enviornment
+    options:
+      - sbox
+      - aat
+      - preview
+      - test
+      - staging
+      - perftest
+      - demo
+      - ithc
+      - dev
+  validations:
+    required: true
+
+- type: dropdown
   id: download
   attributes:
     label: How did you download the software?
     options:
-      - Homebrew
-      - MacPorts
-      - apt-get
-      - Built from source
+      - cft
+      - sds
   validations:
     required: true
