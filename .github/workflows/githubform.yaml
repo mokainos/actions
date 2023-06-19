@@ -28,8 +28,13 @@ jobs:
           # Using the character `'` to prevent all characters enclosed within
           # them from being treated as special characters (e.g. $ or `)
           echo '${{ steps.parse.outputs.payload }}'
-          echo "new_data=${{ steps.parse.outputs.payload }}" >> $GITHUB_ENV
+          echo "NEW_DATA=${{ steps.parse.outputs.payload }}" >> $GITHUB_ENV
           
       - name: run output
         run: |
-          echo "${{ env.new_data }}"
+          echo "${{ env.NEW_DATA }}"
+        
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11' 
+      - run: python file_handling.py
