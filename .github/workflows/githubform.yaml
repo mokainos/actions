@@ -32,4 +32,4 @@ jobs:
           
       - name: run output
         run: |
-          echo ${{ env.new_data }}
+          echo "${{ env.new_data }}"
