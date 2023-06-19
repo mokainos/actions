@@ -13,7 +13,7 @@ body:
   id: Start_Date
   attributes:
     label: Change start date
-    description: "start date"
+    description: "Change start date"
     placeholder: "MM/DD/YYYY"
   validations:
     required: true
@@ -21,8 +21,8 @@ body:
 - type: input
   id: End_Date
   attributes:
-    label: Change END date
-    description: "End date"
+    label: Change end date
+    description: "Change end date"
     placeholder: "MM/DD/YYYY"
   validations:
     required: true
@@ -47,7 +47,7 @@ body:
 - type: dropdown
   id: download
   attributes:
-    label: How did you download the software?
+    label: Business unit
     options:
       - cft
       - sds
