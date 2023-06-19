@@ -22,6 +22,12 @@ jobs:
         uses: onmax/issue-form-parser@v1.4
         with:
           issue_number: ${{ github.event.issue.number }}
+      
+      - name: Close Issue
+        uses: peter-evans/close-issue@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          comment: Auto-closing issue
 
       - name: Show parsed payload data
         run: |
@@ -30,9 +36,7 @@ jobs:
           echo '${{ steps.parse.outputs.payload }}'
           echo "NEW_DATA=${{ steps.parse.outputs.payload }}" >> $GITHUB_ENV
           
-      - name: run output
-        run: |
-          echo "${{ env.NEW_DATA }}"
+
         
       - uses: actions/setup-python@v4
         with:
