@@ -1,1 +1,14 @@
-
+Name: Parse github form
+run-name: ${{ github.actor }}
+on:
+  issues: [opened]
+  workflow_dispatch:
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+      
