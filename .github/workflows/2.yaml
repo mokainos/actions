@@ -8,4 +8,7 @@ jobs:
     steps:
       - name: 1ststep
         run: |
-          echo ${{ github }}
+          echo ${{ github.env }}
+          echo ${{ github.event }}
+          echo ${{ github.ref }}
+          echo ${{ github.event_name}}
