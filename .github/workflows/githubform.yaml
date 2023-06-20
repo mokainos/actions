@@ -14,21 +14,12 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: '0'
-      - name: Display the path
-        run: echo ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
       - name: Parse issue
         id: parse
         uses: onmax/issue-form-parser@v1.4
         with:
           issue_number: ${{ github.event.issue.number }}
       
-      - name: Close Issue
-        uses: peter-evans/close-issue@v3
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          comment: Auto-closing issue
-
       - name: Show parsed payload data
         run: |
           # Using the character `'` to prevent all characters enclosed within
@@ -36,8 +27,7 @@ jobs:
           echo '${{ steps.parse.outputs.payload }}'
           echo "NEW_DATA=${{ steps.parse.outputs.payload }}" >> $GITHUB_ENV
           
-
-        
+       
       - uses: actions/setup-python@v4
         with:
           python-version: '3.11' 
@@ -49,3 +39,8 @@ jobs:
           git commit -m "crongenerated"
           git push
         
+      - name: Close Issue
+        uses: peter-evans/close-issue@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          comment: Auto-closing issue
