@@ -1,0 +1,10 @@
+name: "GitHub displays the names of your workflows on your repository's *Actions* tab"
+run-name: "commit-message if omitted.  reference the *github* and *inputs* contexts."
+
+jobs:
+  1stjobid:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1ststep
+        run: |
+          echo ${{ github }}
