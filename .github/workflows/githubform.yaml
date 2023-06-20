@@ -1,4 +1,4 @@
-name: Parse github form
+#name: Parse github form
 run-name: ${{ github.actor }}
 on:
   issues:
