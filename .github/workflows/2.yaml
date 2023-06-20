@@ -3,7 +3,7 @@ run-name: "commit-message if omitted.  reference the *github* and *inputs* conte
 on:
   workflow_dispatch:
 jobs:
-  1stjobid:
+  onejobid:
     runs-on: ubuntu-latest
     steps:
       - name: 1ststep
