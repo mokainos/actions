@@ -17,7 +17,7 @@ jobs:
         run: |
           sha=${GITHUB_SHA::8}
           ts=$(date +%s)
-          echo "::set-output name=BUILD_ID::${sha}-${ts}
+          echo "::set-output name=BUILD_ID::${sha}-${ts}"
           
       - name: out
         run: |
