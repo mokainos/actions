@@ -12,6 +12,12 @@ jobs:
     steps:
 
       - run: echo $GITHUB_WORKFLOW_SHA
+      - name: Generate build ID
+        id: prep
+        run: |
+          sha=${GITHUB_SHA::8}
+          ts=$(date +%s)
+          echo "::set-output name=BUILD_ID::${sha}-${ts}"
       - uses: octokit/request-action@v2.x
         id: get_latest_release
         with:
