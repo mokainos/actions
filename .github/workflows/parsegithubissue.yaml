@@ -38,8 +38,8 @@ jobs:
           git add .
           git commit -m "parseissues"
           git push --set-upstream origin PR-${{ github.event.issue.number }}
-          gh pr create -f -t PR-${{ github.event.issue.number }}
-          gh pr edit PR-${{ github.event.issue.number }} --add-label automerge --repo hmcts/${{github.repository}} 
+          gh pr create -f -t PR-${{ github.event.issue.number }} -t ${{ github.run_id }}
+          gh pr edit PR-${{ github.event.issue.number }} -t ${{ github.run_id }}  --add-label automerge --repo hmcts/${{github.repository}} 
         env:
           GH_TOKEN: ${{ github.token }}
       - run: | # approve the pull request
