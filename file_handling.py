@@ -19,6 +19,8 @@ except FileNotFoundError:
 else:
   for x in range(len(listObj)):
     d = json.loads(listObj[x]) 
+    print(d['Skip shutdown end date'])
+    print(d)
     end_date = datetime.strptime(d['Skip shutdown end date'], '%d-%m-%Y').date()
     print(end_date)
     if today > end_date:
