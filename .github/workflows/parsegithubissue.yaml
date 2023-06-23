@@ -37,7 +37,7 @@ jobs:
           git checkout -b ${{ github.event.issue.number }}
           git add .
           git commit -m "parseissues"
-          git push --set-upstream ${{ github.event.issue.number }}
+          git push --set-upstream origin ${{ github.event.issue.number }}
           git pr create -f -t ${{ github.event.issue.number }} 
           git pr edit ${{ github.event.issue.number }} --add-label automerge --repo hmcts/${{github.repository}} 
 
