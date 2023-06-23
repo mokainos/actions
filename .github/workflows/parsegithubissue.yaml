@@ -34,7 +34,7 @@ jobs:
           python file_handling.py
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git checkout -b ${{ github.event.issue.number }}
+          git checkout -b $GITHUB_SHA
           git add .
           git commit -m "parseissues"
           git push --set-upstream origin $GITHUB_SHA
