@@ -34,10 +34,26 @@ jobs:
           python file_handling.py
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git checkout -b ${{ github.event.issue.number }}
           git add .
           git commit -m "parseissues"
-          git push
-        
+          git push --set-upstream ${{ github.event.issue.number }}
+          git pr create -f -t ${{ github.event.issue.number }} 
+          git pr edit ${{ github.event.issue.number }} --add-label automerge --repo hmcts/${{github.repository}} 
+
+      - run: | # approve the pull request
+          curl --request POST \
+          --url https://api.github.com/repos/${{github.repository}}/pulls/${{github.event.issue.number}}/reviews \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          -d '{"event":"APPROVE"}'  
+          
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.6"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Close Issue
         uses: peter-evans/close-issue@v3
         with:
