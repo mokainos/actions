@@ -37,14 +37,14 @@ jobs:
           git checkout -b ${{ github.event.issue.number }}
           git add .
           git commit -m "parseissues"
-          git push --set-upstream origin ${{ GITHUB_SHA }}
-          gh pr create -f -t ${{ GITHUB_SHA }} 
-          gh pr edit ${{ GITHUB_SHA }} --add-label automerge --repo hmcts/${{github.repository}} 
+          git push --set-upstream origin $GITHUB_SHA
+          gh pr create -f -t $GITHUB_SHA
+          gh pr edit $GITHUB_SHA --add-label automerge --repo hmcts/${{github.repository}} 
         env:
           GH_TOKEN: ${{ github.token }}
       - run: | # approve the pull request
           curl --request POST \
-          --url https://api.github.com/repos/${{github.repository}}/pulls/${{GITHUB_SHA}}/reviews \
+          --url https://api.github.com/repos/${{github.repository}}/pulls/$GITHUB_SHA/reviews \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json' \
           -d '{"event":"APPROVE"}'  
