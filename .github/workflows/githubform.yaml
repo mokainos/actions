@@ -1,10 +1,9 @@
 #name: Parse github form
-run-name: ${{ github.actor }}
+run-name: ${{ github.actor - github.event.issue.number }}
 on:
   issues:
     types:
       - opened
-      - labeled
   workflow_dispatch:
 jobs:
   parse:
@@ -15,7 +14,7 @@ jobs:
         with:
           fetch-depth: '0'
       - name: Parse issue
-        id: parse
+        id: parse_issue
         uses: onmax/issue-form-parser@v1.4
         with:
           issue_number: ${{ github.event.issue.number }}
@@ -24,8 +23,8 @@ jobs:
         run: |
           # Using the character `'` to prevent all characters enclosed within
           # them from being treated as special characters (e.g. $ or `)
-          echo '${{ steps.parse.outputs.payload }}'
-          echo NEW_DATA='${{ steps.parse.outputs.payload }}' >> $GITHUB_ENV
+          echo '${{ steps.parse_issue.outputs.payload }}'
+          echo NEW_DATA='${{ steps.parse_issue.outputs.payload }}' >> $GITHUB_ENV
           
        
       - uses: actions/setup-python@v4
@@ -36,7 +35,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "crongenerated"
+          git commit -m "parseissues"
           git push
         
       - name: Close Issue
