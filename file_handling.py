@@ -6,7 +6,7 @@ from datetime import date
 
 listObj = []
 filepath = 'issues_list.json'
-new_data = os.environ["NEW_DATA"]
+new_data = os.environ.get('NEW_DATA')
 today = date.today()
 print(new_data)
 try:
@@ -22,7 +22,8 @@ else:
     end_date = datetime.strptime(d['Change_End_Date'], '%d/%m/%Y').date()
     if today > end_date:
          listObj.pop(x)
-  listObj.append(new_data)
+  if new_data:
+    listObj.append(new_data)
   with open(filepath, "w") as json_file:
     json.dump(listObj, json_file, indent=4)
 
