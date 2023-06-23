@@ -1,5 +1,5 @@
-name: test issue
-description: test issue form
+name: Release Form	
+description: Release Form	
 title: Change Ticket number
 
 body:
@@ -7,7 +7,31 @@ body:
 - type: markdown
   attributes:
     value: |
-      Change effecting
+      Please provide change details
+      
+- type: dropdown
+  id: download
+  attributes:
+    label: Business_Unit
+    options:
+      - cft
+      - ss
+  validations:
+    required: true
+    
+- type: dropdown
+  id: Enviornment
+  attributes:
+    label: Enviornment
+    options:
+      - sbox
+      - aat/staging
+      - preview/dev
+      - test/perftest
+      - demo
+      - ithc
+  validations:
+    required: true
       
 - type: input
   id: Start_Date
@@ -24,29 +48,5 @@ body:
     label: Change_End_Date
     description: "Change end date"
     placeholder: "MM/DD/YYYY"
-  validations:
-    required: true
-    
-- type: dropdown
-  id: ENV
-  attributes:
-    label: Enviornment
-    options:
-      - sbox
-      - aat/staging
-      - preview/dev
-      - test/perftest
-      - demo
-      - ithc
-  validations:
-    required: true
-
-- type: dropdown
-  id: download
-  attributes:
-    label: Business_Unit
-    options:
-      - cft
-      - sds
   validations:
     required: true
