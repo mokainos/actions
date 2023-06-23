@@ -1,0 +1,14 @@
+name: "GitHub displays the names of your workflows on your repository's *Actions* tab"
+run-name: "commit-message if omitted.  reference the *github* and *inputs* contexts."
+on:
+  workflow_dispatch:
+jobs:
+  onejobid:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1ststep
+        run: |
+          echo ${{ github.env }}
+          echo ${{ github.event }}
+          echo ${{ github.ref }}
+          echo ${{ github.event_name}}
