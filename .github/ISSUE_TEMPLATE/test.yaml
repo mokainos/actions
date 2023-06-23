@@ -1,13 +1,13 @@
 name: Release Form	
 description: Release Form	
-title: Release Form	
+title: Change Ticket number
 
 body:
 
 - type: markdown
   attributes:
     value: |
-      Change effecting
+      Please provide change details
       
 - type: dropdown
   id: download
