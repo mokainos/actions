@@ -19,7 +19,8 @@ except FileNotFoundError:
 else:
   for x in range(len(listObj)):
     d = json.loads(listObj[x]) 
-    end_date = datetime.strptime(d['Change_End_Date'], '%d/%m/%Y').date()
+    end_date = datetime.strptime(d['Skip shutdown end date'], '%d-%m-%Y').date()
+    print(end_date)
     if today > end_date:
          listObj.pop(x)
   if new_data:
