@@ -4,5 +4,6 @@
     "{Change_Start_Date:20/06/2023,Change_End_Date:20/06/2023,Enviornment:aat/staging,Business_Unit:cft}",
     "{Business_Unit:cft,Enviornment:sbox,Change_Start_Date:23/06/2023,Change_End_Date:23/06/2023}",
     "{Business_Unit:cft,Enviornment:sbox,Change_Start_Date:23/05/2032,Change_End_Date:23/05/2032}",
-    "'{Business_Unit:cft,Enviornment:sbox,Change_Start_Date:23/05/2034,Change_End_Date:23/05/2034}'"
+    "'{Business_Unit:cft,Enviornment:sbox,Change_Start_Date:23/05/2034,Change_End_Date:23/05/2034}'",
+    "{\"Business_Unit\":\"cft\",\"Enviornment\":\"sbox\",\"Change_Start_Date\":\"23/05/2032\",\"Change_End_Date\":\"23/05/2032\"}"
 ]
