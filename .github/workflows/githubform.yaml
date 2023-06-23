@@ -25,7 +25,7 @@ jobs:
           # Using the character `'` to prevent all characters enclosed within
           # them from being treated as special characters (e.g. $ or `)
           echo '${{ steps.parse.outputs.payload }}'
-          echo "NEW_DATA='${{ steps.parse.outputs.payload }}'" >> $GITHUB_ENV
+          echo NEW_DATA='${{ steps.parse.outputs.payload }}' >> $GITHUB_ENV
           
        
       - uses: actions/setup-python@v4
