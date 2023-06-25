@@ -42,7 +42,7 @@ jobs:
           echo "------------"
           #gh pr edit  -t ${{ github.run_id }}  --add-label automerge --repo mokainos/${{ github.repository }} 
           echo PR_NUM=$(gh search prs --match title --repo mokainos/actions --state open --json number,title  --jq  '.[] | select(.title | contains("${{ github.run_id }}"))| .number') >> $GITHUB_ENV
-          echo gh search prs --match title --repo mokainos/actions --state open --json number,title  --jq  '.[] | select(.title | contains("${{ github.run_id }}"))| .number')
+          echo "gh search prs --match title --repo mokainos/actions --state open --json number,title  --jq  '.[] | select(.title | contains(\"${{ github.run_id }}\"))| .number')"
           echo NUM ${{ env.PR_NUM }}
         env:
           GH_TOKEN: ${{ github.token }}
