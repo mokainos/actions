@@ -47,6 +47,17 @@ jobs:
           echo NUM ${{ env.PR_NUM }}
         env:
           GH_TOKEN: ${{ github.token }}
+
+      - name: get PR details 
+        uses: octokit/request-action@v2.x
+        id: get_pr_number
+        with:
+            route: GET /repos/mokainos/action/pulls
+            owner: octokit
+            repo: request-action
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo latest release: '${{ steps.get_pr_number.outputs.data }}'"
       - run: | # approve the pull request
           curl --request POST \
           --url https://api.github.com/repos/${{github.repository}}/pulls/${{ env.PR_NUM }}/reviews \
