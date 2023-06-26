@@ -82,7 +82,7 @@ jobs:
         run: |
           gh pr review ${{ env.PR_NUM }} --approve
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: "${{ secrets.mokainos }}"
           
       - name: merge
         run: |
