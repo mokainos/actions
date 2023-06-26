@@ -3,6 +3,12 @@
         "Business area": "cft",
         "Environment": "AAT / Staging",
         "Skip shutdown start date": "05-05-2005",
+        "Skip shutdown end date": "26-06-2023"
+    },
+    {
+        "Business area": "cft",
+        "Environment": "AAT / Staging",
+        "Skip shutdown start date": "01-01-2001",
         "Skip shutdown end date": "_No response_"
     }
 ]
