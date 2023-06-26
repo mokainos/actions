@@ -29,7 +29,7 @@ jobs:
           echo "ˆˆˆˆˆˆˆ"
           git status
           echo "%%%%%%%%%%"
-          git commit -m "parseissues"
+          git commit -m "parseissues" --allow-empty
           echo "--------------"
           git push --set-upstream origin PR-${{ github.run_id }}
           gh pr create -f  -t ${{ github.run_id }}
