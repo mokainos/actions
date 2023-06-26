@@ -62,7 +62,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Set env 
         run: | 
-            echo PR_NUM=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[] | select(.title | contains(\"${{ github.run_id }}\"))| .number' ) >>   $GITHUB_ENV
+            echo PR_NUM=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[] | select(.title | contains(${{ github.run_id }}))| .number' ) >>   $GITHUB_ENV
       - name: echo_prnum
         run: |
           echo PR_NUM ${{ env.PR_NUM }}
