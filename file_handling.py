@@ -5,6 +5,7 @@ from datetime import datetime
 from datetime import date
 
 listObj = []
+listObjwrite = []
 filepath = 'issues_list.json'
 new_data = os.environ.get('NEW_DATA')
 today = date.today()
@@ -15,10 +16,12 @@ try:
     listObj = json.load(json_file)
 except FileNotFoundError:
   with open(filepath, "w") as json_file:
-    listObj.append(new_data)
-    json.dump(listObj, json_file, indent=4)
+    listObjwrite.append(new_data)
+    json.dump(listObjwrite, json_file, indent=4)
 else:
   print(len(listObj))
+  print(type(listObj))
+  print(listObj)
   listObjwrite = []
   for x in range(len(listObj)):
     print("================")
