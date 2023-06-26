@@ -1,4 +1,4 @@
-#name: Parse github form
+name: Housekeeping Shutdown form
 run-name: Housekeeping json file
 on:
   schedule:
