@@ -1,3 +1,4 @@
 [
-    "{\"Business area\":\"cft\",\"Environment\":[\"Sandbox\",\"AAT / Staging\"],\"Skip shutdown start date\":\"23/12/2024\",\"Skip shutdown end date\":\"_No response_\"}"
+    "{\"Business area\":\"cft\",\"Environment\":[\"Sandbox\",\"AAT / Staging\"],\"Skip shutdown start date\":\"23/12/2024\",\"Skip shutdown end date\":\"_No response_\"}",
+    "{\"Business area\":\"cft\",\"Environment\":\"Test / Perftest\",\"Skip shutdown start date\":\"01-01-2023\",\"Skip shutdown end date\":\"_No response_\"}"
 ]
