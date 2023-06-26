@@ -75,7 +75,7 @@ jobs:
           --header 'content-type: application/json' \
           -d '{"event":"APPROVE"}'  
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.mokainos }}
           
       - id: automerge
         name: automerge
