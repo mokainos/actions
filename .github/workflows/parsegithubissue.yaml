@@ -78,7 +78,7 @@ jobs:
         run: |
           gh pr edit ${{ env.PR_NUM }} --add-label "automerge"  --repo mokainos/actions
           #gh pr review ${{ env.PR_NUM }} --approve 
-          gh pr merge ${{ env.PR_NUM }} --admin 
+          gh pr merge ${{ env.PR_NUM }} --admin -m
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
             
