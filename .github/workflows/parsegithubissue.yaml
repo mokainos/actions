@@ -80,7 +80,7 @@ jobs:
          
       - name: approve 
         run: |
-          gh pr review ${{ env.PR_NUM }} --approve -m
+          gh pr review ${{ env.PR_NUM }} --approve
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           
