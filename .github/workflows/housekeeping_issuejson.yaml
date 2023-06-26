@@ -1,5 +1,5 @@
-#name: Parse github form
-run-name: Housekeeping issues json file
+name: Housekeeping Shutdown form
+run-name: Housekeeping json file
 on:
   schedule:
     - cron:  '00 18 * * *'
@@ -24,8 +24,13 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git checkout -b PR-${{ github.run_id }}
+          echo "=============="
           git add .
-          git commit -m "parseissues"
+          echo "ˆˆˆˆˆˆˆ"
+          git status
+          echo "%%%%%%%%%%"
+          git commit -m "parseissues" --allow-empty
+          echo "--------------"
           git push --set-upstream origin PR-${{ github.run_id }}
           gh pr create -f  -t ${{ github.run_id }}
         env:

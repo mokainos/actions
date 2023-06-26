@@ -19,15 +19,22 @@ except FileNotFoundError:
 else:
   for x in range(len(listObj)):
     d = json.loads(listObj[x]) 
+    print(d['Skip shutdown end date'])
+    
     if d['Skip shutdown end date'] == "_No response_":
+      print(d)
       end_date = today
       d['Skip shutdown end date'] = today
+      print(d)
     else:
       end_date = datetime.strptime(d['Skip shutdown end date'], '%d-%m-%Y').date()
+      print( end_date)
+      print(today)
     if today > end_date:
          listObj.pop(x)
   if new_data:
     listObj.append(new_data)
+  print(listObj)
   with open(filepath, "w") as json_file:
     json.dump(listObj, json_file, indent=4)
 
