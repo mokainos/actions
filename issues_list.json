@@ -6,6 +6,12 @@
             "Demo"
         ],
         "Skip shutdown start date": "10-10-2023",
-        "Skip shutdown end date": "_No response_"
+        "Skip shutdown end date": "26-06-2023"
+    },
+    {
+        "Business area": "cft",
+        "Environment": "Sandbox",
+        "Skip shutdown start date": "01-01-2022",
+        "Skip shutdown end date": "01-01-2022"
     }
 ]
