@@ -44,7 +44,7 @@ jq -c '.[]' <<< $SUBSCRIPTIONS | while read subscription; do
                 continue
             fi
             echo $SKIP
-        done <<(jq -c '.[]' issues_list.json)
+        done < <(jq -c '.[]' issues_list.json)
         echo $SKIP
         if [[ $SKIP == "false" ]]; then
             echo "About to shutdown cluster $NAME (rg:$RESOURCE_GROUP)"
