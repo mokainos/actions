@@ -21,7 +21,7 @@ jq -c '.[]' <<< $SUBSCRIPTIONS | while read subscription; do
         ENV=${ENV/#sbox/Sandbox}
         ENV=${ENV/stg/Staging}
         echo $NAME $BU $ENV
-        jq -c '.[]' issues_list.json | while read id
+        while read id
         do
             BA=$(jq -r '."Business area"' <<< $id)
             ENVT=$(jq -r '."Environment"' <<< $id)
@@ -44,7 +44,7 @@ jq -c '.[]' <<< $SUBSCRIPTIONS | while read subscription; do
                 continue
             fi
             echo $SKIP
-        done #
+        done <<(jq -c '.[]' issues_list.json)
         echo $SKIP
         if [[ $SKIP == "false" ]]; then
             echo "About to shutdown cluster $NAME (rg:$RESOURCE_GROUP)"
