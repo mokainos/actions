@@ -41,13 +41,16 @@ jobs:
           gh pr create -f  -t ${{ github.run_id }}
           echo "------------"
           #gh pr edit  -t ${{ github.run_id }}  --add-label automerge --repo mokainos/${{ github.repository }} 
-          echo PR_NUM="$(gh search prs --match title --repo mokainos/actions --state open --json number,title  --jq  '.[] | select(.title | contains(\"${{ github.run_id }}\"))| .number')" >> $GITHUB_ENV
-          echo $PR_NUM
-          echo "gh search prs --match title --repo mokainos/actions --state open --json number,title  --jq  '.[] | select(.title | contains(\"${{ github.run_id }}\"))| .number'"
-          echo NUM ${{ env.PR_NUM }}
+          #echo PR_NUM="$(gh search prs --match title --repo mokainos/actions --state open --json number,title  --jq  '.[] | select(.title | contains(\"${{ github.run_id }}\"))| .number')" >> $GITHUB_ENV
+          #echo "gh search prs --match title --repo mokainos/actions --state open --json number,title  --jq  '.[] | select(.title | contains(\"${{ github.run_id }}\"))| .number'"
+          #echo NUM ${{ env.PR_NUM }}
         env:
           GH_TOKEN: ${{ github.token }}
-
+      - name: Install jq tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install jq
+          
       - name: get PR details 
         uses: octokit/request-action@v2.x
         id: get_pr_number
@@ -57,7 +60,9 @@ jobs:
           repo: request-action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo latest release: '${{ steps.get_pr_number.outputs.data }}'"
+      - run: |
+          echo PR_NUM=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].number' ) >>   $GITHUB_ENV
+          echo ${{ env.PR_NUM }}
       - run: | # approve the pull request
           curl --request POST \
           --url https://api.github.com/repos/${{github.repository}}/pulls/${{ env.PR_NUM }}/reviews \
