@@ -18,8 +18,9 @@ except FileNotFoundError:
     listObj.append(new_data)
     json.dump(listObj, json_file, indent=4)
 else:
+  print(len(listObj))
   for x in range(len(listObj)):
-    print("=======================")
+    print(x   "=======================")
     d = json.loads(listObj[x]) 
     print(d)
     
@@ -33,10 +34,12 @@ else:
       
       if today > end_date:
         listObj.pop(x)
+        print("pop")
         print(listObj)
          
   if new_data:
     listObj.append(new_data)
+  print("before write")  
   print(listObj)
   with open(filepath, "w") as json_file:
     json.dump(listObj, json_file, indent=4)
