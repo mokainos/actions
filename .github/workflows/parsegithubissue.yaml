@@ -76,10 +76,10 @@ jobs:
           
       - name: label
         run: |
-          gh pr edit ${{ env.PR_NUM }} --add-label "automerge"  --repo mokainos/actions
+          #gh pr edit ${{ env.PR_NUM }} --add-label "automerge"  --repo mokainos/actions
           gh pr review ${{ env.PR_NUM }} --approve 
         env:
-          GITHUB_TOKEN: "${{ secrets.mokianos }}"
+          GH_TOKEN: ${{ github.token }}
             
             
 #       - run: | # approve the pull request
