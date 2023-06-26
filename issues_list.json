@@ -1,5 +1,6 @@
 [
     "{\"Business area\":\"cft\",\"Environment\":[\"Sandbox\",\"AAT / Staging\"],\"Skip shutdown start date\":\"23/12/2024\",\"Skip shutdown end date\":\"_No response_\"}",
     "{\"Business area\":\"cft\",\"Environment\":\"Sandbox\",\"Skip shutdown start date\":\"09-01-2025\",\"Skip shutdown end date\":\"_No response_\"}",
-    "{\"Business area\":\"cft\",\"Environment\":\"AAT / Staging\",\"Skip shutdown start date\":\"01-01-2333\",\"Skip shutdown end date\":\"_No response_\"}"
+    "{\"Business area\":\"cft\",\"Environment\":\"AAT / Staging\",\"Skip shutdown start date\":\"01-01-2333\",\"Skip shutdown end date\":\"_No response_\"}",
+    "{\"Business area\":\"cft\",\"Environment\":\"Sandbox\",\"Skip shutdown start date\":\"01-01-2034\",\"Skip shutdown end date\":\"_No response_\"}"
 ]
