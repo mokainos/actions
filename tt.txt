@@ -1,0 +1,36 @@
+About to shutdown cluster ss-demo-00-aks (rg:ss-demo-00-rg)
+
+About to shutdown cluster ss-demo-01-aks (rg:ss-demo-01-rg)
+
+About to shutdown cluster ss-ptlsbox-00-aks (rg:ss-ptlsbox-00-rg)
+
+About to shutdown cluster cft-ptlsbox-00-aks (rg:cft-ptlsbox-00-rg)
+
+About to shutdown cluster cft-perftest-00-aks (rg:cft-perftest-00-rg)
+
+About to shutdown cluster cft-perftest-01-aks (rg:cft-perftest-01-rg)
+
+About to shutdown cluster ss-ithc-00-aks (rg:ss-ithc-00-rg)
+
+About to shutdown cluster ss-ithc-01-aks (rg:ss-ithc-01-rg)
+
+About to shutdown cluster ss-sbox-00-aks (rg:ss-sbox-00-rg)
+
+About to shutdown cluster ss-sbox-01-aks (rg:ss-sbox-01-rg)
+
+About to shutdown cluster cft-ithc-00-aks (rg:cft-ithc-00-rg)
+
+About to shutdown cluster cft-ithc-01-aks (rg:cft-ithc-01-rg)
+
+About to shutdown cluster ss-test-00-aks (rg:ss-test-00-rg)
+
+About to shutdown cluster ss-test-01-aks (rg:ss-test-01-rg)
+
+About to shutdown cluster cft-sbox-00-aks (rg:cft-sbox-00-rg)
+
+About to shutdown cluster cft-sbox-01-aks (rg:cft-sbox-01-rg)
+
+About to shutdown cluster cft-demo-00-aks (rg:cft-demo-00-rg)
+
+About to shutdown cluster cft-demo-01-aks (rg:cft-demo-01-rg)
+
