@@ -30,7 +30,7 @@ else:
     
     if d['Skip shutdown end date'] == "_No response_":
       
-      d['Skip shutdown end date'] = today
+      d['Skip shutdown end date'] = today.strftime('%d-%m-%Y')
       print(d)
       listObjwrite.append(d)
       print(listObjwrite)
