@@ -20,7 +20,8 @@ except FileNotFoundError:
 else:
   print(len(listObj))
   for x in range(len(listObj)):
-    print(x   "=======================")
+    print("================")
+    print(x)
     d = json.loads(listObj[x]) 
     print(d)
     
