@@ -19,6 +19,7 @@ except FileNotFoundError:
     json.dump(listObj, json_file, indent=4)
 else:
   print(len(listObj))
+  listObjwrite = []
   for x in range(len(listObj)):
     print("================")
     print(x)
@@ -29,19 +30,17 @@ else:
       end_date = today
       d['Skip shutdown end date'] = end_date
       print(listObj)
+      listObjwrite.append(d)
     else:
       end_date = datetime.strptime(d['Skip shutdown end date'], '%d-%m-%Y').date()
       print( end_date)
-      
-      if today > end_date:
-        listObj.pop(x)
-        print("pop")
-        print(listObj)
-         
+      if today < end_date:
+        listObjwrite.append(d)
+            
   if new_data:
-    listObj.append(new_data)
+    listObjwrite.append(new_data)
   print("before write")  
-  print(listObj)
+  print(listObjwrite)
   with open(filepath, "w") as json_file:
     json.dump(listObj, json_file, indent=4)
 
