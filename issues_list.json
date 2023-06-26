@@ -1,3 +1,9 @@
 [
-    "{\"Business area\":\"cft\",\"Environment\":\"AAT / Staging\",\"Skip shutdown start date\":\"01-01-2022\",\"Skip shutdown end date\":\"_No response_\"}"
+    {
+        "Business area": "cft",
+        "Environment": "AAT / Staging",
+        "Skip shutdown start date": "01-01-2022",
+        "Skip shutdown end date": "26-06-2023"
+    },
+    "{\"Business area\":\"cft\",\"Environment\":\"Demo\",\"Skip shutdown start date\":\"28-06-2023\",\"Skip shutdown end date\":\"_No response_\"}"
 ]
