@@ -31,14 +31,14 @@ else:
     if d['Skip shutdown end date'] == "_No response_":
       end_date = today
       d['Skip shutdown end date'] = end_date
-      print(listObj)
       listObjwrite.append(d)
+      print(listObjwrite)
     else:
       end_date = datetime.strptime(d['Skip shutdown end date'], '%d-%m-%Y').date()
       print( end_date)
       if today < end_date:
         listObjwrite.append(d)
-            
+      print(listObjwrite) 
   if new_data:
     listObjwrite.append(new_data)
   print("before write")  
