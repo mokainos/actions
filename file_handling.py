@@ -6,16 +6,14 @@ from datetime import date
 
 listObj = []
 filepath = 'issues_list.json'
-new_data = os.environ.get('NEW_DATA')
+new_data = json.loads(os.environ.get('NEW_DATA'))
 print("todays date")
 today = date.today()
 print(today)
 print(type(today))
 print(new_data)
 print(type(new_data))
-new_data1 = json.loads(new_data)
-print(new_data1)
-print(type(new_data1))
+
 try:
   with open(filepath, "r") as json_file:
     listObj = json.load(json_file)
