@@ -5,30 +5,27 @@ from datetime import datetime
 from datetime import date
 
 listObj = []
-listObjwrite = []
 filepath = 'issues_list.json'
 new_data = os.environ.get('NEW_DATA')
+print("todays date")
 today = date.today()
 print(today)
+print(type(today))
 print(new_data)
 try:
   with open(filepath, "r") as json_file:
     listObj = json.load(json_file)
 except FileNotFoundError:
   with open(filepath, "w") as json_file:
-    listObjwrite.append(new_data)
-    json.dump(listObjwrite, json_file, indent=4)
+    listObj.append(new_data)
+    json.dump(listObj, json_file, indent=4)
 else:
   print(len(listObj))
-  print(type(listObj))
-  print(listObj)
   listObjwrite = []
   for x in range(len(listObj)):
     print("================")
     print(x)
-    print(type(listObj[x]))
-    d = json.load(listObj[x]) 
-    print(type(d))
+    d = json.loads(listObj[x]) 
     print(d)
     
     if d['Skip shutdown end date'] == "_No response_":
@@ -49,4 +46,3 @@ else:
   print(listObjwrite)
   with open(filepath, "w") as json_file:
     json.dump(listObjwrite, json_file, indent=4)
-
