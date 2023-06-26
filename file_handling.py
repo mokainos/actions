@@ -31,6 +31,7 @@ else:
     if d['Skip shutdown end date'] == "_No response_":
       end_date = today
       d['Skip shutdown end date'] = end_date
+      print(d)
       listObjwrite.append(d)
       print(listObjwrite)
     else:
