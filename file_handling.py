@@ -21,6 +21,7 @@ else:
     d = json.loads(listObj[x]) 
     if d['Skip shutdown end date'] == "_No response_":
       end_date = today
+      d['Skip shutdown end date'] = today
     else:
       end_date = datetime.strptime(d['Skip shutdown end date'], '%d-%m-%Y').date()
     if today > end_date:
