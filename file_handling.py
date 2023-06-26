@@ -42,5 +42,5 @@ else:
   print("before write")  
   print(listObjwrite)
   with open(filepath, "w") as json_file:
-    json.dump(listObj, json_file, indent=4)
+    json.dump(listObjwrite, json_file, indent=4)
 
