@@ -4,5 +4,6 @@
     "{\"Business area\":\"cft\",\"Environment\":\"AAT / Staging\",\"Skip shutdown start date\":\"01-01-2323\",\"Skip shutdown end date\":\"_No response_\"}",
     "{\"Business area\":\"cft\",\"Environment\":\"Demo\",\"Skip shutdown start date\":\"01-01-2022\",\"Skip shutdown end date\":\"_No response_\"}",
     "{\"Business area\":\"cft\",\"Environment\":[\"Preview / Dev\",\"Test / Perftest\"],\"Skip shutdown start date\":\"01-01-2-24\",\"Skip shutdown end date\":\"_No response_\"}",
-    "{\"Business area\":\"cft\",\"Environment\":[\"AAT / Staging\",\"ITHC\"],\"Skip shutdown start date\":\"01-01-2023\",\"Skip shutdown end date\":\"_No response_\"}"
+    "{\"Business area\":\"cft\",\"Environment\":[\"AAT / Staging\",\"ITHC\"],\"Skip shutdown start date\":\"01-01-2023\",\"Skip shutdown end date\":\"_No response_\"}",
+    "{\"Business area\":\"cft\",\"Environment\":\"Preview / Dev\",\"Skip shutdown start date\":\"01-01-2023\",\"Skip shutdown end date\":\"01-01-2023\"}"
 ]
