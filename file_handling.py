@@ -7,8 +7,10 @@ from datetime import date
 listObj = []
 filepath = 'issues_list.json'
 new_data = os.environ.get('NEW_DATA')
+print("todays date")
 today = date.today()
 print(today)
+print(type(today))
 print(new_data)
 try:
   with open(filepath, "r") as json_file:
