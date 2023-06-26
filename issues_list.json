@@ -4,5 +4,11 @@
         "Environment": "AAT / Staging",
         "Skip shutdown start date": "27-06-2023",
         "Skip shutdown end date": "27-06-2023"
+    },
+    {
+        "Business area": "cross-cutting",
+        "Environment": "Sandbox",
+        "Skip shutdown start date": "22-04-2023",
+        "Skip shutdown end date": "_No response_"
     }
 ]
