@@ -60,9 +60,10 @@ jobs:
           repo: request-action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
-          echo PR_NUM=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].number' ) >>   $GITHUB_ENV
-          echo ${{ env.PR_NUM }}
+      - name: Set env 
+        run: | 
+            echo PR_NUM=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].number' ) >>   $GITHUB_ENV
+      - run: echo PR_NUM ${{ env.PR_NUM }}
       - run: | # approve the pull request
           curl --request POST \
           --url https://api.github.com/repos/${{github.repository}}/pulls/${{ env.PR_NUM }}/reviews \
