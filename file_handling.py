@@ -19,7 +19,7 @@ except FileNotFoundError:
     json.dump(listObj, json_file, indent=4)
 else:
   for x in range(len(listObj)):
-    echo "======================="
+    print("=======================")
     d = json.loads(listObj[x]) 
     print(d)
     
