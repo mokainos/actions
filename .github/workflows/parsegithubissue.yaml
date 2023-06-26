@@ -71,7 +71,7 @@ jobs:
         uses: octokit/request-action@v2.x
         with:
           route: POST /repos/${{ github.repository }}/pulls/${{ env.PR_NUM }}/reviews
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.mokainos }}
           review_event: APPROVE
           body: Auto-approved by @mokainos
           
