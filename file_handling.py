@@ -26,7 +26,7 @@ else:
   for x in range(len(listObj)):
     print("================")
     print(x)
-    d = json.loads(listObj[x]) 
+    d = listObj[x] 
     print(type(d))
     print(d)
     
