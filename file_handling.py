@@ -10,9 +10,6 @@ new_data = json.loads(os.environ.get('NEW_DATA'))
 print("todays date")
 today = date.today()
 print(today)
-print(type(today))
-print(new_data)
-print(type(new_data))
 
 try:
   with open(filepath, "r") as json_file:
@@ -27,9 +24,9 @@ else:
   for x in range(len(listObj)):
     print("================")
     print(x)
-    d = json.loads(listObj[x]) 
+    d = listObj[x]
     print(d)
-    
+    print(type(d))
     if d['Skip shutdown end date'] == "_No response_":
       
       d['Skip shutdown end date'] = today.strftime('%d-%m-%Y')
