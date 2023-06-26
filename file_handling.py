@@ -46,4 +46,3 @@ else:
   print(listObjwrite)
   with open(filepath, "w") as json_file:
     json.dump(listObjwrite, json_file, indent=4)
-
