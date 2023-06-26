@@ -1,5 +1,5 @@
 #name: Parse github form
-run-name: Housekeeping issues json file
+run-name: Housekeeping json file
 on:
   schedule:
     - cron:  '00 18 * * *'
