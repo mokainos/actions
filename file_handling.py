@@ -6,7 +6,7 @@ from datetime import date
 
 listObj = []
 filepath = 'issues_list.json'
-new_data = json.loads(os.environ.get('NEW_DATA'))
+new_data = json.loads(os.environ.get('NEW_DATA', '{}'))
 print("todays date")
 today = date.today()
 print(today)
