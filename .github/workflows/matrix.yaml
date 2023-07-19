@@ -6,4 +6,10 @@ jobs:
       matrix:
         version: [10, 12, 14]
         os: [ubuntu-latest, windows-latest]
-        
+    steps:
+      - uses: actions/checkout@v2
+      - name: bashs
+        run: |
+          echo matrix.version
+          echo matrix.os
+        shell: bash
