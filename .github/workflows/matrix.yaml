@@ -6,7 +6,7 @@ on:
     branches: [main]
 jobs:
   example_matrix:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         version: [10, 12, 14]
