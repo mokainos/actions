@@ -1,5 +1,7 @@
 name: matrix
 run-name: ${{ github.actor }}
+on:
+  workflow_dispatch:
 jobs:
   example_matrix:
     strategy:
