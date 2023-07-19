@@ -6,6 +6,7 @@ on:
     branches: [main]
 jobs:
   validate-job:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
