@@ -24,7 +24,16 @@ jobs:
            echo ${{ steps.prep.outputs.BUILD_ID }}
       - name: githubcontext
         run: |
-          echo ${{ github }}
+          echo ref:  ${{ github.ref }}
+          echo path: ${{ github.path }}
+          echo ref_name: ${{ github.ref_name }}
+          echo github.workspace ${{ github.workspace }}
+          echo github.workflow ${{ github.workflow }}
+          echo github.repository ${{ github.repository }}
+          echo github.ref_name ${{ github.ref_name }}
+          echo github.event_name ${{ github.event_name }}
+          echo github.env ${{ github.env }}
+          echo github.action ${{ github.action }}
         
         
         
