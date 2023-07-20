@@ -22,6 +22,10 @@ jobs:
       - name: out
         run: |
            echo ${{ steps.prep.outputs.BUILD_ID }}
+      - name: githubcontext
+        run: |
+          echo ${{ github }}
+        
         
         
         
