@@ -18,9 +18,10 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true
-      - name: Build And Deploy
-        id: builddeploy
-        run: echo "$azure_static_web_apps_api_token"
+      - name: My first step
+        uses: actions/hello_world@main
         with:
-          azure_static_web_apps_api_token: ${{ secrets.WEBAPP_TOKEN }}
+          first_name: ${{ secrets.WEBAPP_TOKEN }}
+          middle_name: The
+          last_name: Octocat
           
