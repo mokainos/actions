@@ -24,7 +24,6 @@ on:
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
     uses: mokainos/actions/.github/workflows/called.yaml@main
     with:
       WEBAPP_TOKEN: 'TOKEN'
