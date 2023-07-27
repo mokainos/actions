@@ -26,5 +26,7 @@ jobs:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     uses: mokainos/actions/.github/workflows/called.yaml@main
     with:
-      WEBAPP_TOKEN: 'TOKEN'
       shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
+    secrets:
+      WEBAPP_TOKEN: 'TOKEN'
+      
