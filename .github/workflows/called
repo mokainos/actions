@@ -1,0 +1,26 @@
+name: push shutter pages to webapp
+on:
+  workflow_call:
+    secrets:
+      WEBAPP_TOKEN:
+        required: true
+        description: Static webapp deployment token
+    inputs:
+      shutter_page_folder:
+        required: true
+        type: string 
+
+jobs:
+  build_and_deploy_job:
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        run: echo "$azure_static_web_apps_api_token"
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.WEBAPP_TOKEN }}
+          
