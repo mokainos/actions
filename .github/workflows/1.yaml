@@ -26,7 +26,7 @@ jobs:
            echo ${{ steps.prep.outputs.BUILD_ID }}
       - name: githubcontext
         run: |
-          echo ${{ toJson(github) }}
+          #echo ${{ toJson(github) }}
           echo ref:  ${{ github.ref }}
           echo path: ${{ github.path }}
           echo ref_name: ${{ github.ref_name }}
