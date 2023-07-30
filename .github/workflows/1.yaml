@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:  [README*]
   pull_request:
+    branches: 
+      - main
   workflow_dispatch:
 jobs:
   job1:
@@ -24,6 +26,7 @@ jobs:
            echo ${{ steps.prep.outputs.BUILD_ID }}
       - name: githubcontext
         run: |
+          echo ${{ toJson(github) }}
           echo ref:  ${{ github.ref }}
           echo path: ${{ github.path }}
           echo ref_name: ${{ github.ref_name }}
