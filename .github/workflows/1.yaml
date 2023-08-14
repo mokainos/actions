@@ -24,6 +24,8 @@ jobs:
       - name: out
         run: |
            echo ${{ steps.prep.outputs.BUILD_ID }}
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: outchmod
         run: chmod +x ./scripts/test.sh 
       - name: out1
