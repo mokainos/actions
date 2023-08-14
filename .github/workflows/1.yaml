@@ -24,6 +24,8 @@ jobs:
       - name: out
         run: |
            echo ${{ steps.prep.outputs.BUILD_ID }}
+      - name: outchmod
+        run: chmod +x ./scripts/test.sh 
       - name: out1
         run: ./scripts/test.sh 
       - name: githubcontext
