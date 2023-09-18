@@ -2,6 +2,13 @@ name: "1 GitHub displays the names of your workflows on your repository's *Actio
 run-name: "1 commit-message if omitted.  reference the *github* and *inputs* contexts."
 on:
   workflow_dispatch:
+      inputs:
+        PROJECT:
+          type: choice
+          description: "Business area"
+          options:
+          - SDS
+          - CFT
 jobs:
   onejobid:
     runs-on: ubuntu-latest
@@ -15,7 +22,7 @@ jobs:
   twojobid:
      runs-on: ubuntu-latest
      steps:
-       - name: 2ststep
+       - name: 2ststep-${{ inputs.PROJECT }}
          run: |
            echo ${{ github.env }}
            echo ${{ github.event }}
